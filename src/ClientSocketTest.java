@@ -5,7 +5,7 @@ public class ClientSocketTest {
     public static void main(String[] args) throws IOException {
         //客户端
         //1、创建客户端Socket，指定服务器地址和端口
-        Socket socket = new Socket("localhost", 10086);
+        Socket socket = new Socket("192.168.112.1",10086);
         //2、获取输出流，向服务器端发送信息
         OutputStream os = socket.getOutputStream();//字节输出流
         PrintWriter pw = new PrintWriter(os);//将输出流包装成打印流

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.InputStream;
 import java.net.*;
 import java.io.*;
@@ -17,10 +18,10 @@ public class ServerSocketTest {
 
         //3、获取输入流，并读取客户端信息
         InputStream is = socket.getInputStream();
-        InputStreamReader isr = new InputStreamReader(is);
-        BufferedReader br = new BufferedReader(isr);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String info;
         while ((info = br.readLine()) != null) {
+            JOptionPane.showMessageDialog(null, info);
             System.out.println("我是服务器，客户端说：" + info);
         }
         socket.shutdownInput(); // 关闭输入流
@@ -35,7 +36,6 @@ public class ServerSocketTest {
         pw.close();
         os.close();
         br.close();
-        isr.close();
         is.close();
         socket.close();
         serverSocket.close();
