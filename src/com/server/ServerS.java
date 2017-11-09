@@ -1,20 +1,31 @@
-import javax.swing.*;
-import java.io.InputStream;
+package com.server;
+
 import java.net.*;
-import java.io.*;
 
-public class ServerSocketTest {
-    public static void main(String[] args) throws IOException {
+public class ServerS {
+    private static ServerSocket serverSocket;
+    private int port;
 
-        /**
-         2  * 基于TCP协议的Socket通信，实现用户登录，服务端
-         3 */
+    public ServerS(int port) {
+        this.port=port;
+        try {
+            serverSocket = new ServerSocket(port);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        // 创建一个服务器端Socket，指定绑定的端口 (端口范围: 1024-65535)
-        ServerSocket serverSocket = new ServerSocket(10086);
-
-        //2、调用accept()方法开始监听，等待客户端的连接
-        Socket socket = serverSocket.accept();
+        while (true) {
+            try {
+                Socket socket = serverSocket.accept();
+                new Thread(new ClientSS(socket)).start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+/*
+       *基于TCP协议的Socket通信，实现用户登录，服务端
 
         //3、获取输入流，并读取客户端信息
         InputStream is = socket.getInputStream();
@@ -24,6 +35,10 @@ public class ServerSocketTest {
             JOptionPane.showMessageDialog(null, info);
             System.out.println("我是服务器，客户端说：" + info);
         }
+
+    }
+
+    public static void ServerSocketEnd() throws IOException {
         socket.shutdownInput(); // 关闭输入流
 
         //4、获取输出流，响应客户端的请求
@@ -39,5 +54,4 @@ public class ServerSocketTest {
         is.close();
         socket.close();
         serverSocket.close();
-    }
-}
+    }*/
