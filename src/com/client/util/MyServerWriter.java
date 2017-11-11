@@ -1,4 +1,4 @@
-package com.client;
+package com.client.util;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class MyServerWriter extends Thread {
     private DataOutputStream dos;
     private String str;
+    private Scanner scanner;
 
     public MyServerWriter(DataOutputStream dos, String str) {
         this.dos = dos;
         this.str = str;
+        this.scanner = new Scanner(System.in);
     }
 
     @Override
@@ -25,7 +27,6 @@ public class MyServerWriter extends Thread {
     private void chat() {
         System.out.println("====进入聊天====");
         String info;
-        Scanner scanner = new Scanner(System.in);
         try {
             while (true) {
                 info = scanner.next();
@@ -46,11 +47,11 @@ public class MyServerWriter extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        scanner.close();
     }
 
     private void file() {
         System.out.println("====进入文件传输====");
-        Scanner scanner = new Scanner(System.in);
         String s = scanner.next();
         try {
             dos.writeUTF(s);

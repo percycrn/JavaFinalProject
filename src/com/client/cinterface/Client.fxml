@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.client.cinterface.ClientController"
+          prefHeight="400.0" prefWidth="600.0">
+    <HBox spacing="10" GridPane.rowIndex="0" minWidth="-Infinity" minHeight="-Infinity">
+        <Label text="host"/>
+        <TextField fx:id="host"/>
+        <Label text="port"/>
+        <TextField fx:id="port"/>
+        <Button text="connect" onAction="#handleConnectAction"/>
+    </HBox>
+    <ScrollPane GridPane.rowIndex="1">
+        <TextArea text="123" fx:id="deliveredMessage"/>
+    </ScrollPane>
+    <HBox spacing="10" GridPane.rowIndex="2">
+        <TextField fx:id="deliveringMessage"/>
+        <Button text="send" onAction="#handleSendMessageAction"/>
+    </HBox>
+</GridPane>

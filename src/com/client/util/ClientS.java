@@ -1,4 +1,4 @@
-package com.client;
+package com.client.util;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,6 +12,7 @@ public class ClientS {
     private String name;
     private DataInputStream in;
     private DataOutputStream out;
+    private Scanner scanner = new Scanner(System.in);
 
     public ClientS(String path, int port, String name) {
         this.path = path;
@@ -24,28 +25,29 @@ public class ClientS {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        send();
-        laugh();
+        sendName();
     }
 
-    private void send() {
-        String s = null;
+    private void sendName() {
+        //String s = null;
         try {
             out.writeUTF(name);
             out.flush();
-            s = in.readUTF();
+            //s = in.readUTF();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("在线列表" + s);
+        //System.out.println("在线列表" + s);
     }
 
-    private void laugh() {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("聊天请输入:l 文件传输请输入:w 退出请输入:t");
-            String str = scanner.nextLine();
-            scanner.close();
+    public void sendMessage(String message) {
+        try {
+            out.writeUTF(message);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+            /*
             if (str.equalsIgnoreCase("l")) {
                 try {
                     out.writeUTF(str);
@@ -93,6 +95,7 @@ public class ClientS {
                 System.out.println("退出系统");
                 System.exit(0);
             }
+            */
         }
     }
 }
