@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.client.cinterface.register.RegisterController"
+          alignment="CENTER" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Register" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Text text="For Client" style="-fx-font: BOLD 23 Consolas;"
+          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Text text="Client Name"
+          GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="clientName"
+               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Text text="password"
+          GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <PasswordField fx:id="clientPassword"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Button text="fallback" onAction="#handleFallbackAction"
+            GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Button text="register" onAction="#handleRegisterAction"
+            GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+</GridPane>

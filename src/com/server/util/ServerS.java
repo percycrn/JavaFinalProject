@@ -1,26 +1,29 @@
 package com.server.util;
 
+import javax.swing.*;
 import java.net.*;
 
 public class ServerS {
     private static ServerSocket serverSocket;
-    private int port;
 
     public ServerS(int port) {
-        this.port=port;
         try {
             serverSocket = new ServerSocket(port);
+            JOptionPane.showMessageDialog(null, "创建服务器成功");
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         while (true) {
-            try {
-                Socket socket = serverSocket.accept();
-                new Thread(new ClientSS(socket)).start();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            listener();
+        }
+    }
+
+    private void listener() {
+        try {
+            Socket socket = serverSocket.accept();
+            new Thread(new ClientSS(socket)).start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

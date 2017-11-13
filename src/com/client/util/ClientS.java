@@ -7,17 +7,13 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class ClientS {
-    private String path;
-    private int port;
-    private String name;
+    private String myClientName;
+    private String targetName;
     private DataInputStream in;
     private DataOutputStream out;
-    private Scanner scanner = new Scanner(System.in);
 
-    public ClientS(String path, int port, String name) {
-        this.path = path;
-        this.port = port;
-        this.name = name;
+    public ClientS(String path, int port, String myClientName) {
+        this.myClientName = myClientName;
         try {
             Socket socket = new Socket(path, port);
             this.in = new DataInputStream(socket.getInputStream());
@@ -29,19 +25,20 @@ public class ClientS {
     }
 
     private void sendName() {
-        //String s = null;
         try {
-            out.writeUTF(name);
+            out.writeUTF(myClientName);
             out.flush();
-            //s = in.readUTF();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println("在线列表" + s);
     }
 
-    public void sendMessage(String message) {
+    public void sendMessage(String message, String targetName) {
         try {
+            out.writeUTF(myClientName);
+            out.flush();
+            out.writeUTF(targetName);
+            out.flush();
             out.writeUTF(message);
             out.flush();
         } catch (IOException e) {

@@ -1,4 +1,4 @@
-package com.client.cinterface;
+package com.client.cinterface.register;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,17 +6,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Client extends Application {
+public class Register extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void launch() {
+        launch(new String[0]);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Client.fxml"));
-        Scene scene = new Scene(root, 500, 475);
-        primaryStage.setTitle("Client");
+        Parent root = FXMLLoader.load(getClass().getResource("Register.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Register");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();

@@ -1,4 +1,4 @@
-package com.server.sinterface;
+package com.client.cinterface.chat;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,19 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Server extends Application {
-
-    public static void launch(){
-        launch(new String[0]);
-    }
+public class Chat extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Server.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Chat.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Server");
+        primaryStage.setTitle("Chat");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+
+    public static void launch() {
+        launch(new String[0]);
     }
 }

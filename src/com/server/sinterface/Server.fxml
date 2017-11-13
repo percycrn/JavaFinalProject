@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="com.server.sinterface.ServerController"
-          prefHeight="400.0" prefWidth="600.0">
-    <HBox GridPane.rowIndex="0">
-        <Label text="port"/>
+          alignment="CENTER" vgap="10" hgap="10">
+    <padding>
+        <Insets top="25" bottom="10" right="25" left="25"/>
+    </padding>
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Label text="PCPort"/>
+        <Text text="  "/>
         <TextField fx:id="port"/>
-        <Button text="Start Server" onAction="#handleServerStartAction"/>
     </HBox>
 
-    <HBox GridPane.rowIndex="1">
-        <TextArea fx:id="message"/>
+    <HBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Button text="Start Server" onAction="#handleServerStartAction"/>
+        <Button text="Close" onAction="#handleCloseAction"/>
     </HBox>
+
+    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300" prefHeight="300">
+
+    </ScrollPane>
+    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300" prefHeight="300">
+
+    </ScrollPane>
+
 </GridPane>

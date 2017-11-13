@@ -9,9 +9,10 @@ import javafx.scene.control.TextField;
 import javax.swing.*;
 
 public class ServerController {
+    @FXML
     public TextArea message;
+    @FXML
     public TextField port;
-    private ServerS serverS;
 
     @FXML
     protected void handleServerStartAction(ActionEvent event) {
@@ -19,6 +20,18 @@ public class ServerController {
             JOptionPane.showMessageDialog(null, "请输入有效信息");
             return;
         }
-        serverS = new ServerS(Integer.valueOf(port.getText()));
+        new Thread(() -> {
+            try {
+                new ServerS(Integer.valueOf(port.getText()));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "服务器创建失败，请更改port再尝试");
+            }
+        }).start();
+    }
+
+    @FXML
+    protected void handleCloseAction(ActionEvent event) {
+        // TODO
+        System.exit(0);
     }
 }
