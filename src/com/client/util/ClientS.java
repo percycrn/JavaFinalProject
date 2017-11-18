@@ -1,19 +1,18 @@
 package com.client.util;
 
+import com.client.ManageClient;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Scanner;
 
-public class ClientS {
-    private String myClientName;
-    private String targetName;
+public class ClientS extends ManageClient {
     private DataInputStream in;
     private DataOutputStream out;
 
     public ClientS(String path, int port, String myClientName) {
-        this.myClientName = myClientName;
+        setClientName(myClientName);
         try {
             Socket socket = new Socket(path, port);
             this.in = new DataInputStream(socket.getInputStream());
@@ -22,20 +21,37 @@ public class ClientS {
             e.printStackTrace();
         }
         sendName();
+        receiveMessage();
     }
 
     private void sendName() {
         try {
-            out.writeUTF(myClientName);
+            out.writeUTF(getClientName());
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
+    private void receiveMessage() {
+        new Thread(() -> {
+            while (true) {
+                try {
+                    if (!in.readUTF().equals("")) {
+                        getLeftMessage().add(in.readUTF());
+                        getRightMessage().add(" ");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
     public void sendMessage(String message, String targetName) {
         try {
-            out.writeUTF(myClientName);
+            out.writeUTF(getClientName());
             out.flush();
             out.writeUTF(targetName);
             out.flush();
@@ -43,56 +59,6 @@ public class ClientS {
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
-
-            /*
-            if (str.equalsIgnoreCase("l")) {
-                try {
-                    out.writeUTF(str);
-                    out.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("=========");
-                MyServerReader reader = new MyServerReader(in);
-                MyServerWriter writer = new MyServerWriter(out, str);
-                reader.start();
-                writer.start();
-                try {
-                    writer.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if (str.equalsIgnoreCase("W")) {
-                try {
-                    out.writeUTF(str);
-                    out.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                MyServerReader reader = new MyServerReader(in);
-                MyServerWriter writer = new MyServerWriter(out, str);
-                reader.start();
-                writer.start();
-                try {
-                    writer.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if (str.equalsIgnoreCase("t")) {
-                try {
-                    out.writeUTF(str);
-                    out.flush();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("退出系统");
-                System.exit(0);
-            }
-            */
         }
     }
 }

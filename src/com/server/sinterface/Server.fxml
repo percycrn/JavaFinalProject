@@ -10,22 +10,19 @@
     <padding>
         <Insets top="25" bottom="10" right="25" left="25"/>
     </padding>
-    <HBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+    <HBox GridPane.rowIndex="0">
         <Label text="PCPort"/>
         <Text text="  "/>
         <TextField fx:id="port"/>
-    </HBox>
-
-    <HBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <Text text="  "/>
         <Button text="Start Server" onAction="#handleServerStartAction"/>
+        <Text text="  "/>
         <Button text="Close" onAction="#handleCloseAction"/>
     </HBox>
 
-    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300" prefHeight="300">
+    <ListView fx:id="listView" style="-fx-background-insets: 0;" editable="true"
+            GridPane.rowIndex="1">
 
-    </ScrollPane>
-    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300" prefHeight="300">
-
-    </ScrollPane>
+    </ListView>
 
 </GridPane>

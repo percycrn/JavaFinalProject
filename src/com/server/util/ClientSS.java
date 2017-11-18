@@ -1,12 +1,15 @@
 package com.server.util;
 
+import com.server.ManageServer;
+
 import java.net.*;
 import java.io.*;
 import java.util.HashMap;
 
-public class ClientSS implements Runnable {
+public class ClientSS extends ManageServer implements Runnable{
     private static HashMap<String, Socket> map = new HashMap<>();
     private String clientName = null;
+    private String targetName;
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
@@ -61,6 +64,7 @@ public class ClientSS implements Runnable {
                 targetName = in.readUTF();
                 message = in.readUTF();
                 System.out.println("From [" + clientName + "] to [" + targetName + "] " + message);
+                addClientMessage("From [" + clientName + "] to [" + targetName + "] " + message);
                 out = new DataOutputStream(map.get(targetName).getOutputStream());
                 out.writeUTF(clientName);
                 out.flush();

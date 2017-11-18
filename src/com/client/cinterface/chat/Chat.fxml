@@ -4,27 +4,31 @@
 <?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.client.cinterface.chat.ChatController"
+          fx:controller="com.client.cinterface.chat.ChatManageClient"
           alignment="CENTER" hgap="10" vgap="10">
 
     <padding>
         <Insets top="25" bottom="10" right="25" left="25"/>
     </padding>
 
-    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300" prefHeight="400">
+    <ListView fx:id="leftMessageView" style="-fx-padding: 0; -fx-background-insets: 0;"
+              GridPane.rowIndex="0" GridPane.columnIndex="0">
 
-    </ScrollPane>
+    </ListView>
 
-    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300" prefHeight="400">
+    <ListView fx:id="rightMessageView" style="-fx-padding: 0; -fx-background-insets: 0;"
+              GridPane.rowIndex="0" GridPane.columnIndex="1">
 
-    </ScrollPane>
+    </ListView>
 
-    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
+    <HBox spacing="10"
+          GridPane.rowIndex="1" GridPane.columnIndex="0">
         <Label text="message"/>
         <TextField fx:id="deliveringMessage"/>
     </HBox>
 
-    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+    <HBox spacing="10"
+          GridPane.rowIndex="1" GridPane.columnIndex="1">
         <Label text="target client"/>
         <TextField fx:id="targetName"/>
         <Button text="send" onAction="#handleSendMessageAction"/>

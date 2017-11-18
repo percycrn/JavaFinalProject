@@ -7,6 +7,6 @@ import com.server.sinterface.Server;
 
 public class Test {
     public static void main(String[] args) {
-        Login.launch();
+        Chat.launch();
     }
 }

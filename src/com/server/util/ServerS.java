@@ -1,17 +1,23 @@
 package com.server.util;
 
+import com.server.ManageServer;
+
 import javax.swing.*;
 import java.net.*;
 
-public class ServerS {
+public class ServerS extends ManageServer {
     private static ServerSocket serverSocket;
 
+    @SuppressWarnings("all")
     public ServerS(int port) {
         try {
             serverSocket = new ServerSocket(port);
+            addClientMessage("success to start server");
             JOptionPane.showMessageDialog(null, "创建服务器成功");
         } catch (Exception e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "PCPort已被占用");
+            return;
         }
         while (true) {
             listener();
