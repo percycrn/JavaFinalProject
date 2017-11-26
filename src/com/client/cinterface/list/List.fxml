@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
@@ -16,6 +11,15 @@
         <Insets top="25" bottom="10" right="25" left="25"/>
     </padding>
 
-    <ListView fx:id="friendList"/>
+    <HBox spacing="10" GridPane.rowIndex="0">
+        <Label text="好友名"/>
+        <TextField fx:id="friendName"/>
+        <Button text="添加好友" onAction="#handleAddFriendAction"/>
+        <Button text="返回" onAction="#handleBackToLoginAction"/>
+    </HBox>
+
+    <ListView fx:id="friendListView" style="-fx-background-insets: 0;" editable="true"
+              GridPane.rowIndex="1" >
+    </ListView>
 
 </GridPane>

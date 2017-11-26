@@ -2,6 +2,7 @@ package com.client.util;
 
 import com.client.ManageClient;
 
+import javax.swing.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class ClientS extends ManageClient {
     private DataOutputStream out;
 
     public ClientS(String path, int port, String myClientName) {
-        setClientName(myClientName);
+        clientName = myClientName;
         try {
             Socket socket = new Socket(path, port);
             this.in = new DataInputStream(socket.getInputStream());
@@ -26,7 +27,7 @@ public class ClientS extends ManageClient {
 
     private void sendName() {
         try {
-            out.writeUTF(getClientName());
+            out.writeUTF(clientName);
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,9 +39,11 @@ public class ClientS extends ManageClient {
         new Thread(() -> {
             while (true) {
                 try {
-                    if (!in.readUTF().equals("")) {
-                        getLeftMessage().add(in.readUTF());
-                        getRightMessage().add(" ");
+                    String message = in.readUTF();
+                    addFriend(message);
+                    if (!message.equals("")) {
+                        leftMessage.add(message);
+                        rightMessage.add(" ");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -49,9 +52,9 @@ public class ClientS extends ManageClient {
         }).start();
     }
 
-    public void sendMessage(String message, String targetName) {
+    public void sendMessage(String message) {
         try {
-            out.writeUTF(getClientName());
+            out.writeUTF(clientName);
             out.flush();
             out.writeUTF(targetName);
             out.flush();
@@ -59,6 +62,14 @@ public class ClientS extends ManageClient {
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void addFriend(String message) throws IOException {
+        if (message.equals("@add@friend@exist")) {
+            friendList.add(targetName);
+        } else if (message.equals("@add@friend@not@exist")) {
+            JOptionPane.showMessageDialog(null, "该好友不存在");
         }
     }
 }

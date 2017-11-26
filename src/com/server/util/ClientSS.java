@@ -4,9 +4,12 @@ import com.server.ManageServer;
 
 import java.net.*;
 import java.io.*;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class ClientSS extends ManageServer implements Runnable{
+public class ClientSS extends ManageServer implements Runnable {
     private static HashMap<String, Socket> map = new HashMap<>();
     private String clientName = null;
     private String targetName;
@@ -25,11 +28,13 @@ public class ClientSS extends ManageServer implements Runnable{
         storeClientAccount();
     }
 
+    @SuppressWarnings("unchecked")
     private void storeClientAccount() {
         try {
             clientName = in.readUTF();
             map.put(clientName, socket);
-            System.out.println("new connection\nclient name " + clientName);
+            getMessageBottom().add(df.format(new Date())+" new connection, client name: " + clientName);
+            getMessageTop().add(clientName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,6 +57,7 @@ public class ClientSS extends ManageServer implements Runnable{
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void forwardMessage() throws IOException {
         // System.out.println("start chatting");
         // out = new DataOutputStream(map.get(clientName).getOutputStream());
@@ -63,8 +69,7 @@ public class ClientSS extends ManageServer implements Runnable{
                 clientName = in.readUTF();
                 targetName = in.readUTF();
                 message = in.readUTF();
-                System.out.println("From [" + clientName + "] to [" + targetName + "] " + message);
-                addClientMessage("From [" + clientName + "] to [" + targetName + "] " + message);
+                getMessageBottom().add(df.format(new Date())+" From [" + clientName + "] to [" + targetName + "] " + message);
                 out = new DataOutputStream(map.get(targetName).getOutputStream());
                 out.writeUTF(clientName);
                 out.flush();
@@ -77,4 +82,5 @@ public class ClientSS extends ManageServer implements Runnable{
             }
         }
     }
+
 }

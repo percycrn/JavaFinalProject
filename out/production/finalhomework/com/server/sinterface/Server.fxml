@@ -20,9 +20,9 @@
         <Button text="Close" onAction="#handleCloseAction"/>
     </HBox>
 
-    <ListView fx:id="listView" style="-fx-background-insets: 0;" editable="true"
-            GridPane.rowIndex="1">
+    <ListView fx:id="listViewTop" style="-fx-background-insets: 0;" editable="true" prefHeight="150"
+            GridPane.rowIndex="1"/>
 
-    </ListView>
-
+    <ListView fx:id="listViewBottom" style="-fx-background-insets: 0;" editable="true" prefHeight="350"
+              GridPane.rowIndex="2"/>
 </GridPane>

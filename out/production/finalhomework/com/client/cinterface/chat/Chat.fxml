@@ -29,8 +29,7 @@
 
     <HBox spacing="10"
           GridPane.rowIndex="1" GridPane.columnIndex="1">
-        <Label text="target client"/>
-        <TextField fx:id="targetName"/>
         <Button text="send" onAction="#handleSendMessageAction"/>
+        <Button text="back" onAction="#handleBackToListAction"/>
     </HBox>
 </GridPane>

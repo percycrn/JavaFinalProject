@@ -28,7 +28,7 @@
     <PasswordField fx:id="clientPassword"
                    GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-    <Button text="fallback" onAction="#handleFallbackAction"
+    <Button text="back" onAction="#handleFallbackAction"
             GridPane.rowIndex="3" GridPane.columnIndex="0"/>
     <Button text="register" onAction="#handleRegisterAction"
             GridPane.rowIndex="3" GridPane.columnIndex="1"/>

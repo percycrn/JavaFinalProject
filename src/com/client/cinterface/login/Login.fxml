@@ -28,7 +28,7 @@
 
     <Label text="ClientName"
            GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-    <TextField fx:id="clientName"
+    <TextField fx:id="clientNameLogin"
                GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
     <Label text="Password"

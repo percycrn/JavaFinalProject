@@ -4,18 +4,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class ManageServer {
-    private SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-    private static ObservableList clientMessage = FXCollections.observableArrayList();
+public class ManageServer{
+    protected static int numOfUsers = 0;
+    protected static String PCPort;
+    protected SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+    private static ObservableList messageTop = FXCollections.observableArrayList();
+    private static ObservableList messageBottom = FXCollections.observableArrayList();
 
-    protected ObservableList getClientMessage() {
-        return clientMessage;
+    protected static ObservableList getMessageTop() {
+        return messageTop;
     }
 
-    @SuppressWarnings("unchecked")
-    protected void addClientMessage(String message) {
-        clientMessage.add(message + " " + df.format(new Date()));
+    protected static ObservableList getMessageBottom() {
+        return messageBottom;
     }
+
 }

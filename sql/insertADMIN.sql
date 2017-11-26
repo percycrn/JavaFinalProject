@@ -1,0 +1,1 @@
+insert into client(clientName,password) values('admin','admin')

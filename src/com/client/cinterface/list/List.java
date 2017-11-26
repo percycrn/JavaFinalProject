@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class List extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void launch() {
+        launch(new String[0]);
     }
 
     @Override
