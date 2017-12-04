@@ -1,8 +1,8 @@
 package com.server.sinterface;
 
 import com.server.ManageServer;
+import com.server.util.ConnDB;
 import com.server.util.ServerS;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -20,24 +20,19 @@ public class ServerController extends ManageServer implements Initializable {
 
     @FXML
     @SuppressWarnings("unchecked")
-    protected void handleServerStartAction(ActionEvent event) {
+    protected void handleServerStartAction() {
         if (port.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "请输入有效信息");
             return;
         }
         PCPort = port.getText();
         port.setText("");
-        new Thread(() -> {
-            try {
-                new ServerS(Integer.valueOf(PCPort));
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "服务器创建失败，请更改port再尝试");
-            }
-        }).start();
+        ServerS serverS = new ServerS(Integer.valueOf(PCPort));
+        serverS.startListener();
     }
 
     @FXML
-    protected void handleCloseAction(ActionEvent event) {
+    protected void handleCloseAction() {
         // TODO
         System.exit(0);
     }
@@ -45,7 +40,7 @@ public class ServerController extends ManageServer implements Initializable {
     @Override
     @SuppressWarnings("unchecked")
     public void initialize(URL location, ResourceBundle resources) {
-        listViewTop.setItems(getMessageTop());
-        listViewBottom.setItems(getMessageBottom());
+        listViewTop.setItems(messageTop);
+        listViewBottom.setItems(messageBottom);
     }
 }

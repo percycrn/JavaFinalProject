@@ -11,25 +11,22 @@
         <Insets top="25" bottom="10" right="25" left="25"/>
     </padding>
 
-    <ListView fx:id="leftMessageView" style="-fx-padding: 0; -fx-background-insets: 0;"
-              GridPane.rowIndex="0" GridPane.columnIndex="0">
-
-    </ListView>
-
-    <ListView fx:id="rightMessageView" style="-fx-padding: 0; -fx-background-insets: 0;"
-              GridPane.rowIndex="0" GridPane.columnIndex="1">
-
-    </ListView>
-
-    <HBox spacing="10"
-          GridPane.rowIndex="1" GridPane.columnIndex="0">
-        <Label text="message"/>
-        <TextField fx:id="deliveringMessage"/>
+    <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Label text="Current Friend:"/>
+        <Label fx:id="currentFriendName"/>
     </HBox>
 
-    <HBox spacing="10"
-          GridPane.rowIndex="1" GridPane.columnIndex="1">
-        <Button text="send" onAction="#handleSendMessageAction"/>
-        <Button text="back" onAction="#handleBackToListAction"/>
+    <HBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <ListView fx:id="leftMessageView" style="-fx-padding: 0; -fx-background-insets: 0;" prefHeight="300"
+                  prefWidth="260"/>
+        <ListView fx:id="rightMessageView" style="-fx-padding: 0; -fx-background-insets: 0;" prefHeight="300"
+                  prefWidth="260"/>
     </HBox>
+
+    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
+        <TextField fx:id="deliveringMessage" prefHeight="50" prefWidth="400"/>
+        <Button text="send" onAction="#handleSendMessageAction" prefHeight="50" prefWidth="50"/>
+        <Button text="back" onAction="#handleBackToListAction" prefHeight="50" prefWidth="50"/>
+    </HBox>
+
 </GridPane>

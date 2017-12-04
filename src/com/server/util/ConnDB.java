@@ -2,6 +2,7 @@ package com.server.util;
 
 import javafx.collections.ObservableList;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class ConnDB {
@@ -47,7 +48,7 @@ public class ConnDB {
     public String checkPassword(String clientName) throws SQLException {
         resultSet = statement.executeQuery("SELECT PASSWORD FROM CLIENT WHERE CLIENTNAME = '" + clientName + "'");
         resultSet.next();
-        return resultSet.getString("PASSWORD");
+        return resultSet.getString("PASSWORD").trim();
     }
 
     // store new client

@@ -11,6 +11,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import javax.swing.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -36,6 +40,21 @@ public class RegisterController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleRegisterAction(ActionEvent event) {
+        try {
+            socket = new Socket(host.getText(), Integer.valueOf(port.getText()));
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+            out.writeUTF("@Login@");
+            out.flush();
+            out.writeUTF(clientNameLogin.getText());
+            out.flush();
+            out.writeUTF(password.getText());
+            out.flush();
+            String loginStat = in.readUTF();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
         if (connDB.checkClientExist(clientName.getText())) {
             JOptionPane.showMessageDialog(null, "该账户已存在");
             clientPassword.setText("");

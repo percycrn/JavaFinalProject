@@ -38,7 +38,11 @@
 
     <Button text="register" onAction="#handleRegisterAction"
             GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-    <Button text="connect" onAction="#handleLoginAction"
-            GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+        <Button text="connect" onAction="#handleLoginAction"/>
+        <Button text="exit" onAction="#handleExitAction"/>
+    </HBox>
+
 
 </GridPane>

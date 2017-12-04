@@ -1,6 +1,5 @@
 package com.client.cinterface.chat;
 
-import com.client.ManageClient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

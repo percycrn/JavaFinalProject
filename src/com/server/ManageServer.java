@@ -1,23 +1,22 @@
 package com.server;
 
+import com.server.util.ConnDB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.text.SimpleDateFormat;
 
-public class ManageServer{
+public class ManageServer {
     protected static int numOfUsers = 0;
     protected static String PCPort;
-    protected SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-    private static ObservableList messageTop = FXCollections.observableArrayList();
-    private static ObservableList messageBottom = FXCollections.observableArrayList();
+    protected static String clientName;
+    protected static SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+    protected static ObservableList messageTop = FXCollections.observableArrayList();
+    protected static ObservableList messageBottom = FXCollections.observableArrayList();
+    protected static ConnDB connDB;
 
-    protected static ObservableList getMessageTop() {
-        return messageTop;
+    static {
+        connDB = new ConnDB();
+        connDB.setConnection();
     }
-
-    protected static ObservableList getMessageBottom() {
-        return messageBottom;
-    }
-
 }

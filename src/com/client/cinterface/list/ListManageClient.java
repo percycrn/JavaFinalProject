@@ -9,7 +9,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -27,7 +26,7 @@ public class ListManageClient extends ManageClient implements Initializable {
 
     @FXML
     protected void handleAddFriendAction(ActionEvent event) {
-        if (connDB.checkClientExist(friendName.getText())) {
+        /*if (connDB.checkClientExist(friendName.getText())) {
             friendList.add(friendName.getText());
             try {
                 connDB.addFriendToDB(clientName, friendName.getText());
@@ -36,7 +35,7 @@ public class ListManageClient extends ManageClient implements Initializable {
             }
         } else {
             JOptionPane.showMessageDialog(null, "该账户不存在");
-        }
+        }*/
     }
 
     @FXML
@@ -53,23 +52,23 @@ public class ListManageClient extends ManageClient implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO get friend message from server
-        if (checkFriendExist(friendName.getText())){
-            JOptionPane.showMessageDialog(null,"该用户已添加到列表中");
+        if (checkFriendExist(friendName.getText())) {
+            JOptionPane.showMessageDialog(null, "该用户已添加到列表中");
             friendName.setText("");
             return;
         }
         if (!friendListInitFlag) {
-            try {
-                connDB.initFriendList(friendList, clientName);
+           /* try {
+                 connDB.initFriendList(friendList, clientName);
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
+            }*/
             friendListInitFlag = true;
         }
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
-                    targetName = (String.valueOf(friendListView.getSelectionModel().selectedItemProperty()));
+                    targetName = friendListView.getSelectionModel().getSelectedItem().trim();
                     Chat chat = new Chat();
                     try {
                         chat.init();
@@ -79,6 +78,7 @@ public class ListManageClient extends ManageClient implements Initializable {
                     }
                 });
     }
+
 
     private boolean checkFriendExist(String friendName) {
         for (String aFriendList : friendList) {

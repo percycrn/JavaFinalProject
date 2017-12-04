@@ -16,16 +16,6 @@
     <Text text="Welcome" style="-fx-font: BOLD 23 Consolas;"
           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
 
-    <Label text="WLANHost"
-           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <TextField fx:id="host"
-               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
-    <Label text="PCPort"
-           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-    <TextField fx:id="port"
-               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-
     <Label text="ClientName"
            GridPane.rowIndex="3" GridPane.columnIndex="0"/>
     <TextField fx:id="clientNameLogin"
@@ -38,7 +28,11 @@
 
     <Button text="register" onAction="#handleRegisterAction"
             GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-    <Button text="connect" onAction="#handleLoginAction"
-            GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+        <Button text="connect" onAction="#handleLoginAction"/>
+        <Button text="exit" onAction="#handleExitAction"/>
+    </HBox>
+
 
 </GridPane>
