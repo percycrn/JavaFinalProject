@@ -11,13 +11,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class ListManageClient extends ManageClient implements Initializable {
+public class ListController extends ManageClient implements Initializable {
 
     @FXML
     public ListView<String> friendListView;
@@ -25,21 +32,32 @@ public class ListManageClient extends ManageClient implements Initializable {
     public TextField friendName;
 
     @FXML
-    protected void handleAddFriendAction(ActionEvent event) {
-        /*if (connDB.checkClientExist(friendName.getText())) {
-            friendList.add(friendName.getText());
-            try {
-                connDB.addFriendToDB(clientName, friendName.getText());
-            } catch (SQLException e) {
-                e.printStackTrace();
+    protected void handleAddFriendAction() {
+        if (checkFriendExist(friendName.getText())) {
+            JOptionPane.showMessageDialog(null, "该用户已添加到列表中");
+            return;
+        }
+        try {
+            out.writeUTF("@AddFriend@");
+            out.flush();
+            out.writeUTF(friendName.getText());
+            out.flush();
+            String addFriendStat = in.readUTF();
+            switch (addFriendStat) {
+                case "@SuccessToAddFriend@":
+                    friendList.add(friendName.getText());
+                    break;
+                case "@FriendNotExist@":
+                    JOptionPane.showMessageDialog(null, "Friend client not exists");
+                    break;
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "该账户不存在");
-        }*/
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    protected void handleBackToLoginAction(ActionEvent event) {
+    protected void handleBackToLoginAction() {
         Login login = new Login();
         try {
             login.init();
@@ -51,20 +69,25 @@ public class ListManageClient extends ManageClient implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // TODO get friend message from server
-        if (checkFriendExist(friendName.getText())) {
-            JOptionPane.showMessageDialog(null, "该用户已添加到列表中");
-            friendName.setText("");
-            return;
-        }
+        System.out.println(1);
         if (!friendListInitFlag) {
-           /* try {
-                 connDB.initFriendList(friendList, clientName);
-            } catch (SQLException e) {
+            try {
+                socket = new Socket(host, port);
+                in = new DataInputStream(socket.getInputStream());
+                out = new DataOutputStream(socket.getOutputStream());
+                out.writeUTF("@InitFriendList@");
+                out.flush();
+                System.out.println(2);
+                String[] initFriendList = in.readUTF().split(",");
+                System.out.println(3);
+                friendList.addAll(Arrays.asList(initFriendList));
+                System.out.println(4);
+            } catch (IOException e) {
                 e.printStackTrace();
-            }*/
+            }
             friendListInitFlag = true;
         }
+        System.out.println(5);
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
@@ -78,7 +101,6 @@ public class ListManageClient extends ManageClient implements Initializable {
                     }
                 });
     }
-
 
     private boolean checkFriendExist(String friendName) {
         for (String aFriendList : friendList) {

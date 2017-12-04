@@ -24,10 +24,10 @@ public class RegisterController extends ManageClient implements Initializable {
     @FXML
     private TextField clientName;
     @FXML
-    private PasswordField clientPassword;
+    private PasswordField password;
 
     @FXML
-    protected void handleFallbackAction(ActionEvent event) {
+    protected void handleFallbackAction() {
         Login login = new Login();
         try {
             login.init();
@@ -39,43 +39,31 @@ public class RegisterController extends ManageClient implements Initializable {
     }
 
     @FXML
-    protected void handleRegisterAction(ActionEvent event) {
+    protected void handleRegisterAction() {
         try {
-            socket = new Socket(host.getText(), Integer.valueOf(port.getText()));
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
-            out.writeUTF("@Login@");
+            out.writeUTF("@Register@");
             out.flush();
-            out.writeUTF(clientNameLogin.getText());
+            out.writeUTF(clientName.getText());
             out.flush();
             out.writeUTF(password.getText());
             out.flush();
             String loginStat = in.readUTF();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-        if (connDB.checkClientExist(clientName.getText())) {
-            JOptionPane.showMessageDialog(null, "该账户已存在");
-            clientPassword.setText("");
-        } else {
-            try {
-                connDB.storeNewClient(clientName.getText(), clientPassword.getText());
-            } catch (SQLException e) {
-                e.printStackTrace();
+            if (loginStat.equals("@SuccessToRegister@")) {
+                JOptionPane.showMessageDialog(null, "注册成功，返回登录界面");
+                Login login = new Login();
+                try {
+                    login.init();
+                    login.start(ClientStart.getStage());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (loginStat.equals("@ClientAlreadyExist@")) {
                 clientName.setText("");
-                clientPassword.setText("");
-                JOptionPane.showMessageDialog(null, "注册失败");
-                return;
+                password.setText("");
+                JOptionPane.showMessageDialog(null, "Client already exists");
             }
-            JOptionPane.showMessageDialog(null, "注册成功，返回登录界面");
-            Login login = new Login();
-            try {
-                login.init();
-                login.start(ClientStart.getStage());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

@@ -9,11 +9,11 @@ import java.text.SimpleDateFormat;
 public class ManageServer {
     protected static int numOfUsers = 0;
     protected static String PCPort;
-    protected static String clientName;
-    protected static SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
     protected static ObservableList messageTop = FXCollections.observableArrayList();
     protected static ObservableList messageBottom = FXCollections.observableArrayList();
     protected static ConnDB connDB;
+    protected static String clientName;
+    protected static SimpleDateFormat df = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 
     static {
         connDB = new ConnDB();

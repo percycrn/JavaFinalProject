@@ -18,8 +18,8 @@ public class ManageClient {
     protected static ObservableList<String> rightMessage = FXCollections.observableArrayList();
     protected static ObservableList<String> friendList = FXCollections.observableArrayList();
     protected static boolean friendListInitFlag = false;
-    protected DataInputStream in;
-    protected DataOutputStream out;
-    protected Socket socket;
+    protected static DataInputStream in;
+    protected static DataOutputStream out;
+    protected static Socket socket;
     protected SimpleDateFormat df = new SimpleDateFormat("YY-MM-DD HH-MM-SS");
 }

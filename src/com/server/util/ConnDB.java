@@ -32,7 +32,7 @@ public class ConnDB {
     }
 
     // check whether the client exists
-    public boolean checkClientExist(String clientName) {
+    public boolean clientAlreadyExists(String clientName) {
         try {
             resultSet = statement.executeQuery("SELECT CLIENTNAME FROM CLIENT WHERE CLIENTNAME = '" + clientName + "'");
             if (!resultSet.next()) {
@@ -59,11 +59,8 @@ public class ConnDB {
     // initialize the list of friends
     //
     @SuppressWarnings("unchecked")
-    public void initFriendList(ObservableList friendList, String clientName) throws SQLException {
-        resultSet = statement.executeQuery("SELECT friendName FROM FRIEND WHERE CLIENTNAME ='" + clientName + "'");
-        while (resultSet.next()) {
-            friendList.add(resultSet.getString("friendName"));
-        }
+    public ResultSet initFriendList(String clientName) throws SQLException {
+        return statement.executeQuery("SELECT friendName FROM FRIEND WHERE CLIENTNAME ='" + clientName + "'");
     }
 
     // add friend to DB

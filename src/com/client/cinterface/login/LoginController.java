@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeoutException;
 
-public class LoginManageClient extends ManageClient implements Initializable {
+public class LoginController extends ManageClient implements Initializable {
     @FXML
     public TextField clientNameLogin;
     @FXML
@@ -29,23 +29,19 @@ public class LoginManageClient extends ManageClient implements Initializable {
 
     @FXML
     protected void handleLoginAction() {
-        if (host.getText().equals("") || port.getText().equals("") ||
-                clientNameLogin.getText().equals("") || password.getText().equals("")) {
+        if (clientNameLogin.getText().equals("") || password.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "输入信息不能为空");
             return;
         }
         try {
-            socket = new Socket(host.getText(), Integer.valueOf(port.getText()));
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF("@Login@");
             out.flush();
             out.writeUTF(clientNameLogin.getText());
             out.flush();
             out.writeUTF(password.getText());
             out.flush();
-            String loginStat = in.readUTF();
-            switch (loginStat) {
+            String registerStat = in.readUTF();
+            switch (registerStat) {
                 case "@ClientNotExist@":
                     JOptionPane.showMessageDialog(null, "账户未注册");
                     break;
@@ -54,16 +50,13 @@ public class LoginManageClient extends ManageClient implements Initializable {
                     break;
                 case "@SuccessLogin@":
                     try {
-                        System.out.println(6);
                         try {
-                            clientS = new ClientS(host.getText(), Integer.valueOf(port.getText()), clientNameLogin.getText());
-                            System.out.println(7);
+                            clientS = new ClientS(host, port, clientNameLogin.getText());
                             clientName = clientNameLogin.getText();
                         } catch (Exception e) {
                             JOptionPane.showMessageDialog(null, "连接错误，请重试");
                             return;
                         }
-                        // turn to list interface
                         List list = new List();
                         try {
                             list.init();

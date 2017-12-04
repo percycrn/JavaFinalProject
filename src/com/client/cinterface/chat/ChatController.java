@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ChatManageClient extends ManageClient implements Initializable {
+public class ChatController extends ManageClient implements Initializable {
     public TextField deliveringMessage;
     public ListView leftMessageView;
     public ListView rightMessageView;

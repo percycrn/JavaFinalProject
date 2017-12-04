@@ -6,7 +6,7 @@
 <?import javafx.geometry.Insets?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.client.cinterface.login.LoginManageClient"
+          fx:controller="com.client.cinterface.login.LoginController"
           alignment="CENTER" hgap="10" vgap="10">
 
     <padding>
@@ -16,33 +16,22 @@
     <Text text="Welcome" style="-fx-font: BOLD 23 Consolas;"
           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
 
-    <Label text="WLANHost"
+    <Label text="ClientName"
            GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <TextField fx:id="host"
+    <TextField fx:id="clientNameLogin"
                GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-    <Label text="PCPort"
+    <Label text="Password"
            GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-    <TextField fx:id="port"
+    <TextField fx:id="password"
                GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-    <Label text="ClientName"
-           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-    <TextField fx:id="clientNameLogin"
-               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-
-    <Label text="Password"
-           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-    <TextField fx:id="password"
-               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-
     <Button text="register" onAction="#handleRegisterAction"
-            GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            GridPane.rowIndex="3" GridPane.columnIndex="0"/>
 
-    <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+    <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="1">
         <Button text="connect" onAction="#handleLoginAction"/>
         <Button text="exit" onAction="#handleExitAction"/>
     </HBox>
-
 
 </GridPane>

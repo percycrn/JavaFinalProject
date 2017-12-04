@@ -1,6 +1,5 @@
 package com.client.cinterface.login;
 
-import com.client.cinterface.ClientStart;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +10,6 @@ public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ClientStart.setStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("login");
