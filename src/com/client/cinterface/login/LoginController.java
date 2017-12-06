@@ -34,6 +34,7 @@ public class LoginController extends ManageClient implements Initializable {
             return;
         }
         try {
+            clientS = new ClientS(host, port, clientNameLogin.getText());
             out.writeUTF("@Login@");
             out.flush();
             out.writeUTF(clientNameLogin.getText());
@@ -44,28 +45,20 @@ public class LoginController extends ManageClient implements Initializable {
             switch (registerStat) {
                 case "@ClientNotExist@":
                     JOptionPane.showMessageDialog(null, "账户未注册");
+                    close();
                     break;
                 case "@IncorrectPassword@":
                     JOptionPane.showMessageDialog(null, "密码错误");
+                    close();
                     break;
                 case "@SuccessLogin@":
+                    clientName = clientNameLogin.getText();
+                    List list = new List();
                     try {
-                        try {
-                            clientS = new ClientS(host, port, clientNameLogin.getText());
-                            clientName = clientNameLogin.getText();
-                        } catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, "连接错误，请重试");
-                            return;
-                        }
-                        List list = new List();
-                        try {
-                            list.init();
-                            list.start(ClientStart.getStage());
-                        } catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, "登录失败");
-                            e.printStackTrace();
-                        }
+                        list.init();
+                        list.start(ClientStart.getStage());
                     } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "登录失败");
                         e.printStackTrace();
                     }
                     break;
@@ -94,5 +87,11 @@ public class LoginController extends ManageClient implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    private void close() throws IOException {
+        socket.close();
+        in.close();
+        out.close();
     }
 }

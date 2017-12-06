@@ -1,8 +1,5 @@
 package com.server.util;
 
-import javafx.collections.ObservableList;
-
-import javax.swing.*;
 import java.sql.*;
 
 public class ConnDB {
@@ -25,7 +22,7 @@ public class ConnDB {
     public void setConnection() {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            statement = connection.createStatement();
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,10 +54,9 @@ public class ConnDB {
     }
 
     // initialize the list of friends
-    //
     @SuppressWarnings("unchecked")
     public ResultSet initFriendList(String clientName) throws SQLException {
-        return statement.executeQuery("SELECT friendName FROM FRIEND WHERE CLIENTNAME ='" + clientName + "'");
+        return statement.executeQuery("SELECT FRIENDNAME FROM FRIEND WHERE CLIENTNAME ='" + clientName + "'");
     }
 
     // add friend to DB
@@ -70,7 +66,7 @@ public class ConnDB {
     }
 
     // close DB connection
-    private void close(ResultSet resultSet, Statement statement, Connection connection) {
+    /*private void close(ResultSet resultSet, Statement statement, Connection connection) {
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -92,5 +88,5 @@ public class ConnDB {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }

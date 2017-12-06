@@ -13,7 +13,7 @@ public class ServerS extends ManageServer {
     public ServerS(int port) {
         try {
             serverSocket = new ServerSocket(port);
-            messageTop.add("当前用户 " + numOfUsers + " 人");
+            messageTop.add("当前用户 " + map.size() + " 人");
             messageBottom.add(df.format(new Date()) + " success to start server in PC port " + PCPort);
         } catch (Exception e) {
             e.printStackTrace();
@@ -25,8 +25,6 @@ public class ServerS extends ManageServer {
     private void listener() {
         try {
             Socket socket = serverSocket.accept();
-            // numOfUsers++;
-            // messageTop.set(0, "当前用户 " + numOfUsers + " 人");
             new Thread(new ClientSS(socket)).start();
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,10 +33,8 @@ public class ServerS extends ManageServer {
 
     @SuppressWarnings("InfiniteLoopStatement")
     public void startListener() {
-        new Thread(() -> {
-            while (true) {
-                listener();
-            }
-        }).start();
+        while (true) {
+            listener();
+        }
     }
 }

@@ -24,9 +24,9 @@ public class SetHostPortController extends ManageClient implements Initializable
     @FXML
     protected void handleSetHostPortAction() {
         try {
-            socket = new Socket(host.getText(), Integer.valueOf(port.getText()));
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
+            Socket socket = new Socket(host.getText(), Integer.valueOf(port.getText()));
+            DataInputStream in = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF("@Set@");
             out.flush();
             if (in.readUTF().equals("@AbleToConnect@")) {
@@ -39,8 +39,6 @@ public class SetHostPortController extends ManageClient implements Initializable
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                System.out.println(ManageClient.host);
-                System.out.println(ManageClient.port);
             } else {
                 host.setText("");
                 port.setText("");

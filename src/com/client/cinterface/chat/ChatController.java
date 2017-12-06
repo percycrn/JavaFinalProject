@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+
 import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,5 +54,6 @@ public class ChatController extends ManageClient implements Initializable {
         leftMessageView.setItems(leftMessage);
         rightMessageView.setItems(rightMessage);
         currentFriendName.setText(targetName);
+        // clientS.receiveMessage();
     }
 }

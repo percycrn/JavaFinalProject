@@ -69,25 +69,18 @@ public class ListController extends ManageClient implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(1);
         if (!friendListInitFlag) {
             try {
-                socket = new Socket(host, port);
-                in = new DataInputStream(socket.getInputStream());
-                out = new DataOutputStream(socket.getOutputStream());
                 out.writeUTF("@InitFriendList@");
                 out.flush();
-                System.out.println(2);
                 String[] initFriendList = in.readUTF().split(",");
-                System.out.println(3);
                 friendList.addAll(Arrays.asList(initFriendList));
-                System.out.println(4);
             } catch (IOException e) {
                 e.printStackTrace();
             }
             friendListInitFlag = true;
+            clientS.receiveMessage();
         }
-        System.out.println(5);
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {

@@ -16,7 +16,8 @@
         <Label fx:id="currentFriendName"/>
     </HBox>
 
-    <HBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+    <HBox spacing="10"
+          GridPane.rowIndex="1" GridPane.columnIndex="0">
         <ListView fx:id="leftMessageView" style="-fx-padding: 0; -fx-background-insets: 0;" prefHeight="300"
                   prefWidth="260"/>
         <ListView fx:id="rightMessageView" style="-fx-padding: 0; -fx-background-insets: 0;" prefHeight="300"

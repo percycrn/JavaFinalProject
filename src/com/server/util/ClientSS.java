@@ -1,7 +1,9 @@
 package com.server.util;
 
 import com.server.ManageServer;
+import com.server.sinterface.ServerController;
 
+import javax.swing.*;
 import java.net.*;
 import java.io.*;
 import java.sql.ResultSet;
@@ -11,10 +13,16 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class ClientSS extends ManageServer implements Runnable {
-    private static HashMap<String, Socket> map = new HashMap<>();
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
+    private String clientName;
+    private static ConnDB connDB;
+
+    static {
+        connDB = new ConnDB();
+        connDB.setConnection();
+    }
 
     ClientSS(Socket socket) {
         this.socket = socket;
@@ -22,11 +30,6 @@ public class ClientSS extends ManageServer implements Runnable {
             this.in = new DataInputStream(socket.getInputStream());
             this.out = new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            executeTransaction();
-        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -38,10 +41,10 @@ public class ClientSS extends ManageServer implements Runnable {
         messageTop.add(clientName);
     }
 
-    private void executeTransaction() throws SQLException {
+    @SuppressWarnings("unchecked")
+    private void executeTransaction() throws IOException {
         try {
             String message = in.readUTF();
-            System.out.println(message);
             switch (message) {
                 case "@Set@":
                     out.writeUTF("@AbleToConnect@");
@@ -69,7 +72,6 @@ public class ClientSS extends ManageServer implements Runnable {
                         connDB.addFriendToDB(clientName, friendName);
                         out.writeUTF("@SuccessToAddFriend@");
                         out.flush();
-
                     } else {
                         out.writeUTF("@FriendNotExist@");
                         out.flush();
@@ -77,10 +79,9 @@ public class ClientSS extends ManageServer implements Runnable {
                     break;
                 case "@InitFriendList@":
                     ResultSet resultSet = connDB.initFriendList(clientName);
-                    resultSet.beforeFirst();
                     StringBuilder initFriendList = new StringBuilder();
                     while (resultSet.next()) {
-                        initFriendList.append(resultSet.getString("friendName")).append(",").trimToSize();
+                        initFriendList = initFriendList.append(resultSet.getString("friendName")).append(",");
                     }
                     out.writeUTF(String.valueOf(initFriendList));
                     out.flush();
@@ -98,44 +99,40 @@ public class ClientSS extends ManageServer implements Runnable {
                     }
                     break;
                 case "@SendMessage@":
+                    String targetName = in.readUTF();
+                    String dialog = in.readUTF();
+                    messageBottom.add(df.format(new Date()) + " From [" + clientName + "] to [" + targetName + "] " + dialog);
+                    out = new DataOutputStream(map.get(targetName).getOutputStream());
+                    out.writeUTF(dialog);
+                    out.flush();
                     break;
             }
-        } catch (IOException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @Override
+    @SuppressWarnings("all")
     public void run() {
-        forwardMessage();
-    }
-
-    @SuppressWarnings("unchecked")
-    private void forwardMessage() {
-        // System.out.println("start chatting");
-        // out = new DataOutputStream(map.get(clientName).getOutputStream());
-        String targetName;
-        String message;
         while (true) {
             try {
-                targetName = in.readUTF();
-                System.out.println(targetName);
-                message = in.readUTF();
-                System.out.println(targetName);
-                System.out.println(message);
-                messageBottom.add(df.format(new Date()) + " From [" + clientName + "] to [" + targetName + "] " + message);
-                out = new DataOutputStream(map.get(targetName).getOutputStream());
-                System.out.println("-----------------");
-                System.out.println(targetName);
-                System.out.println(message);
-                out.writeUTF(targetName);
-                out.flush();
-                out.writeUTF(message);
-                out.flush();
+                executeTransaction();
             } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("聊天传输出错");
-                break;
+                if (clientName != null) {
+                    messageBottom.add(df.format(new Date()) + " client[" + clientName + "]logout");
+                    messageTop.remove(clientName);
+                    map.remove(clientName);
+                    messageTop.set(0, "当前用户 " + map.size() + " 人");
+                }
+                try {
+                    in.close();
+                    out.close();
+                    socket.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                return;
             }
         }
     }

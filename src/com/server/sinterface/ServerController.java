@@ -28,7 +28,7 @@ public class ServerController extends ManageServer implements Initializable {
         PCPort = port.getText();
         port.setText("");
         ServerS serverS = new ServerS(Integer.valueOf(PCPort));
-        serverS.startListener();
+        new Thread(serverS::startListener).start();
     }
 
     @FXML

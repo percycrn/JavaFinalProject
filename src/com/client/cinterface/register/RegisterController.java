@@ -40,7 +40,14 @@ public class RegisterController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleRegisterAction() {
+        if (clientName.getText().equals("") || password.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "输入信息不能为空");
+            return;
+        }
         try {
+            Socket socket = new Socket(host, port);
+            DataInputStream in = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF("@Register@");
             out.flush();
             out.writeUTF(clientName.getText());

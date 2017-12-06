@@ -8,37 +8,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c056d062-d451-4505-999e-79f72161a2f6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/percycrn.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/percycrn.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" afterPath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/server_jar/server.jar" afterPath="$PROJECT_DIR$/out/artifacts/server_jar/server.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/ManageClient.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/ManageClient.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/ClientStart.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/ClientStart.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/chat/ChatManageClient.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/list/ListManageClient.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/login/Login.fxml" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/login/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/login/LoginManageClient.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/register/Register.fxml" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/register/Register.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/register/RegisterController.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/register/RegisterController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/Test.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/Test.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/list/ListController.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/list/ListController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/login/LoginController.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/login/LoginController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/set/SetHostPortController.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/cinterface/set/SetHostPortController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/client/util/ClientS.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/client/util/ClientS.class" />
       <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/server/ManageServer.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/server/ManageServer.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/server/sinterface/ServerController.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/server/sinterface/ServerController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ClientSS.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ClientSS.class" />
       <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ConnDB.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ConnDB.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/ManageClient.java" afterPath="$PROJECT_DIR$/src/com/client/ManageClient.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/ClientStart.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/ClientStart.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ServerS.class" afterPath="$PROJECT_DIR$/out/production/finalhomework/com/server/util/ServerS.class" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/Test.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/Test.java" />
       <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml" afterPath="$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatManageClient.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml" afterPath="$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/list/ListManageClient.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java" />
       <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml" afterPath="$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/login/Login.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/login/Login.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/login/LoginManageClient.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml" afterPath="$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java" />
       <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.fxml" afterPath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java" />
       <change beforePath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java" afterPath="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/util/ClientS.java" afterPath="$PROJECT_DIR$/src/com/client/util/ClientS.java" />
       <change beforePath="$PROJECT_DIR$/src/com/server/ManageServer.java" afterPath="$PROJECT_DIR$/src/com/server/ManageServer.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/server/sinterface/ServerController.java" afterPath="$PROJECT_DIR$/src/com/server/sinterface/ServerController.java" />
       <change beforePath="$PROJECT_DIR$/src/com/server/util/ClientSS.java" afterPath="$PROJECT_DIR$/src/com/server/util/ClientSS.java" />
       <change beforePath="$PROJECT_DIR$/src/com/server/util/ConnDB.java" afterPath="$PROJECT_DIR$/src/com/server/util/ConnDB.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/server/util/ServerS.java" afterPath="$PROJECT_DIR$/src/com/server/util/ServerS.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,12 +63,68 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="ClientS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/client/util/ClientS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="857">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1037">
+              <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/ServerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="471">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="1001">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="687">
+              <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -80,98 +133,35 @@
       <file leaf-file-name="ListController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="543">
+              <caret line="78" column="36" lean-forward="false" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SetHostPort.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientSS.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/server/util/ClientSS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="52" />
-              <folding>
-                <element signature="e#4066#4067#0" expanded="true" />
-                <element signature="e#4098#4099#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManageClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/ManageClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="List.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="684">
               <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetHostPortController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="28" column="65" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="65" />
-              <folding />
+            <state relative-caret-position="497">
+              <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+              <folding>
+                <element signature="e#2671#2672#0" expanded="true" />
+                <element signature="e#2701#2702#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/com/client/cinterface/register/Register.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/manager/Login.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/Controller.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java" />
         <option value="$PROJECT_DIR$/src/com/client/Controller.java" />
         <option value="$PROJECT_DIR$/src/com/client/Management.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatManagement.java" />
@@ -220,34 +209,35 @@
         <option value="$PROJECT_DIR$/src/com/store/ManageStore.java" />
         <option value="$PROJECT_DIR$/src/com/store/ConnDB.java" />
         <option value="$PROJECT_DIR$/src/com/server/TestMain.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/Test.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml" />
         <option value="$USER_HOME$/Desktop/新建文本文档.java" />
         <option value="$USER_HOME$/Desktop/Ex2_1_HelloJava.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/com/client/util/ClientS.java" />
         <option value="$PROJECT_DIR$/src/com/server/sinterface/Server.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatManageClient.java" />
-        <option value="$PROJECT_DIR$/src/com/server/sinterface/ServerController.java" />
-        <option value="$PROJECT_DIR$/src/com/server/util/ServerS.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/ClientStart.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.fxml" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/login/LoginManageClient.java" />
-        <option value="$PROJECT_DIR$/src/com/server/ManageServer.java" />
-        <option value="$PROJECT_DIR$/src/com/server/util/ConnDB.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/list/ListManageClient.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/login/Login.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml" />
-        <option value="$PROJECT_DIR$/src/com/server/util/ClientSS.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java" />
-        <option value="$PROJECT_DIR$/src/com/client/ManageClient.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml" />
+        <option value="$PROJECT_DIR$/src/com/server/ManageServer.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/server/util/ServerS.java" />
+        <option value="$PROJECT_DIR$/src/com/client/ManageClient.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java" />
+        <option value="$PROJECT_DIR$/src/com/client/util/ClientS.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml" />
+        <option value="$PROJECT_DIR$/src/com/server/util/ClientSS.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/com/server/util/ConnDB.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml" />
+        <option value="$PROJECT_DIR$/src/com/server/sinterface/ServerController.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java" />
         <option value="$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java" />
       </list>
     </option>
@@ -259,8 +249,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1005" />
-    <option name="y" value="-38" />
+    <option name="x" value="969" />
+    <option name="y" value="34" />
     <option name="width" value="1622" />
     <option name="height" value="1732" />
   </component>
@@ -301,10 +291,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,70 +337,14 @@
             </path>
             <path>
               <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="cinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="cinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="cinterface" type="462c0819:PsiDirectoryNode" />
-              <item name="set" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="sinterface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaFinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaFinalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -644,8 +576,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.ClientStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Test" />
         <item index="3" class="java.lang.String" itemvalue="Application.TestMain" />
         <item index="4" class="java.lang.String" itemvalue="Application.List" />
       </list>
@@ -704,30 +636,36 @@
       <workItem from="1512178733019" duration="2795000" />
       <workItem from="1512197516034" duration="9434000" />
       <workItem from="1512278845051" duration="4549000" />
-      <workItem from="1512362871121" duration="8285000" />
+      <workItem from="1512362871121" duration="8465000" />
+      <workItem from="1512381330840" duration="1124000" />
+      <workItem from="1512456375665" duration="67000" />
+      <workItem from="1512456466123" duration="7930000" />
+      <workItem from="1512527858611" duration="4864000" />
+      <workItem from="1512534651007" duration="80000" />
+      <workItem from="1512544113278" duration="7176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173419000" />
+    <option name="totallyTimeSpent" value="194840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3226" height="1746" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32703978" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31625083" sideWeight="0.50128454" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1915037" sideWeight="0.4987155" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30883345" sideWeight="0.4987155" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17276815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19717406" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -789,34 +727,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/store/ManageStore.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/server/TestMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/javaSE8/jdk8/src.zip!/java/sql/DriverManager.java" />
     <entry file="jar://E:/javaSE8/jdk8/src.zip!/java/sql/Statement.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/Server.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="22" column="83" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="83" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/meta/META-INF/MANIFEST.MF" />
@@ -908,41 +827,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/Register.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="30" column="57" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/io/DataInputStream.java">
@@ -953,69 +852,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/util/ClientS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/sql/ResultSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/util/ConnDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <marker date="1512374193840" expanded="true" signature="1152:1221" ph="SELECT CLIEN... CLIENT" />
-            <marker date="1512374193840" expanded="true" signature="1552:1619" ph="SELECT PASSW... CLIENT" />
-            <marker date="1512374193840" expanded="true" signature="1857:1945" ph="INSERT INTO CLIENT... " />
-            <marker date="1512374193840" expanded="true" signature="2152:2220" ph="SELECT frien... FRIEND" />
-            <marker date="1512374193840" expanded="true" signature="2378:2447" ph="INSERT INTO FRIEND... " />
-            <marker date="1512374193840" expanded="true" signature="2484:2553" ph="INSERT INTO FRIEND... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/ServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/ManageServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/util/ServerS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,15 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="173" column="30" lean-forward="true" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,48 +876,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/server/util/ClientSS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="52" />
-          <folding>
-            <element signature="e#4066#4067#0" expanded="true" />
-            <element signature="e#4098#4099#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/ClientStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="576">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding>
             <element signature="e#201#202#0" expanded="false" />
             <element signature="e#229#230#0" expanded="false" />
@@ -1098,72 +905,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/net/URL.java">
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/sql/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="367">
+          <caret line="103" column="14" lean-forward="false" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/net/Socket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="53" column="6" lean-forward="false" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="216">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/server/util/ServerS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/server/ManageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/ManageClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="252">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/chat/Chat.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/set/SetHostPortController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="28" column="65" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="65" />
+        <state relative-caret-position="317">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="28" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.java">
+    <entry file="file://$PROJECT_DIR$/src/com/server/util/ConnDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="436">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <marker date="1512545249912" expanded="true" signature="1148:1217" ph="SELECT CLIEN... CLIENT" />
+            <marker date="1512545249912" expanded="true" signature="1548:1615" ph="SELECT PASSW... CLIENT" />
+            <marker date="1512545249912" expanded="true" signature="1853:1941" ph="INSERT INTO CLIENT... " />
+            <marker date="1512545249912" expanded="true" signature="2367:2436" ph="INSERT INTO FRIEND... " />
+            <marker date="1512545249912" expanded="true" signature="2473:2542" ph="INSERT INTO FRIEND... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/Login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="857">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1001">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/register/Register.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/server/sinterface/ServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="261" column="0" lean-forward="true" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/server/util/ClientSS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="123" column="34" lean-forward="false" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/List.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+          <folding>
+            <element signature="e#2671#2672#0" expanded="true" />
+            <element signature="e#2701#2702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/chat/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="56" column="36" lean-forward="false" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/client/util/ClientS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/client/cinterface/list/ListController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="543">
+          <caret line="78" column="36" lean-forward="false" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
           <folding />
         </state>
       </provider>
