@@ -70,28 +70,27 @@ public class ListController extends ManageClient implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (!friendListInitFlag) {
-            try {
-                out.writeUTF("@InitFriendList@");
-                out.flush();
-                String[] initFriendList = in.readUTF().split(",");
-                friendList.addAll(Arrays.asList(initFriendList));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            friendListInitFlag = true;
+        friendList.removeAll();
+        try {
+            out.writeUTF("@InitFriendList@");
+            out.flush();
+            String[] initFriendList = in.readUTF().split(",");
+            friendList.addAll(Arrays.asList(initFriendList));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        friendListInitFlag = true;
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
                     targetName = friendListView.getSelectionModel().getSelectedItem().trim();
-                    /*Chat chat = new Chat();
+                    Chat chat = new Chat();
                     try {
                         chat.init();
                         chat.start(ClientStart.getStage());
                     } catch (Exception e) {
                         e.printStackTrace();
-                    }*/
+                    }
                 });
     }
 

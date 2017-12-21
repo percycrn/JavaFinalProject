@@ -23,20 +23,18 @@ public class ClientS extends ManageClient {
 
     @SuppressWarnings("InfiniteLoopStatement")
     public void receiveMessage() {
-        new Thread(() -> {
-            while (true) {
-                try {
-                    String message = in.readUTF();
-                    if (!message.equals("")) {
-                        ManageClient.leftMessage.add(message);
-                        ManageClient.rightMessage.add(" ");
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.exit(0);
+        while (true) {
+            try {
+                String message = in.readUTF();
+                if (!message.equals("")) {
+                    ManageClient.leftMessage.add(message);
+                    ManageClient.rightMessage.add(" ");
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(0);
             }
-        }).start();
+        }
     }
 
     public void sendMessage(String message) {

@@ -107,6 +107,12 @@ public class ClientSS extends ManageServer implements Runnable {
                     map.remove(clientName);
                     messageBottom.add(df.format(new Date()) + " quantity of clients " + map.size());
                     break;
+                case "@DeleteFriend@":
+                    String deleteFriendName = in.readUTF();
+                    connDB.deleteFriend(clientName,deleteFriendName);
+                    out.writeUTF("@SuccessDelete@");
+                    out.flush();
+                    break;
             }
         } catch (SQLException e) {
             e.printStackTrace();
