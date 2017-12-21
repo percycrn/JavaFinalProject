@@ -16,6 +16,7 @@
         <TextField fx:id="friendName"/>
         <Button text="Add Friend" onAction="#handleAddFriendAction"/>
         <Button text="fallback" onAction="#handleBackToLoginAction"/>
+        <Button text="exit" onAction="#handleExitAction"/>
     </HBox>
 
     <ListView fx:id="friendListView" style="-fx-background-insets: 0;" editable="true"

@@ -1,16 +1,12 @@
 package com.server.util;
 
 import com.server.ManageServer;
-import com.server.sinterface.ServerController;
 
-import javax.swing.*;
 import java.net.*;
 import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
 
 public class ClientSS extends ManageServer implements Runnable {
     private Socket socket;
@@ -38,7 +34,7 @@ public class ClientSS extends ManageServer implements Runnable {
     private void storeClientAccount() {
         map.put(clientName, socket);
         messageBottom.add(df.format(new Date()) + " new connection, client name: " + clientName);
-        messageTop.add(clientName);
+        messageBottom.add(df.format(new Date()) + " quantity of clients " + map.size());
     }
 
     @SuppressWarnings("unchecked")
@@ -106,6 +102,11 @@ public class ClientSS extends ManageServer implements Runnable {
                     out.writeUTF(dialog);
                     out.flush();
                     break;
+                case "@Logout@":
+                    messageBottom.add(df.format(new Date()) + " client[" + clientName + "] logout");
+                    map.remove(clientName);
+                    messageBottom.add(df.format(new Date()) + " quantity of clients " + map.size());
+                    break;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,12 +120,6 @@ public class ClientSS extends ManageServer implements Runnable {
             try {
                 executeTransaction();
             } catch (IOException e) {
-                if (clientName != null) {
-                    messageBottom.add(df.format(new Date()) + " client[" + clientName + "]logout");
-                    messageTop.remove(clientName);
-                    map.remove(clientName);
-                    messageTop.set(0, "当前用户 " + map.size() + " 人");
-                }
                 try {
                     in.close();
                     out.close();

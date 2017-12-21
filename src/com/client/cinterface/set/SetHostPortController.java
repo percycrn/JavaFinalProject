@@ -1,7 +1,7 @@
 package com.client.cinterface.set;
 
 import com.client.ManageClient;
-import com.client.cinterface.ClientStart;
+import com.client.ClientStart;
 import com.client.cinterface.login.Login;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

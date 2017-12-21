@@ -1,7 +1,7 @@
 package com.client.cinterface.chat;
 
 import com.client.ManageClient;
-import com.client.cinterface.ClientStart;
+import com.client.ClientStart;
 import com.client.cinterface.list.List;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,6 +54,6 @@ public class ChatController extends ManageClient implements Initializable {
         leftMessageView.setItems(leftMessage);
         rightMessageView.setItems(rightMessage);
         currentFriendName.setText(targetName);
-        // clientS.receiveMessage();
+        //clientS.receiveMessage();
     }
 }

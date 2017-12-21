@@ -27,13 +27,13 @@ public class ClientS extends ManageClient {
             while (true) {
                 try {
                     String message = in.readUTF();
-                    System.out.println(message);
                     if (!message.equals("")) {
                         ManageClient.leftMessage.add(message);
                         ManageClient.rightMessage.add(" ");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.exit(0);
                 }
             }
         }).start();
@@ -46,6 +46,15 @@ public class ClientS extends ManageClient {
             out.writeUTF(ManageClient.targetName);
             out.flush();
             out.writeUTF(message);
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void exit() {
+        try {
+            out.writeUTF("@Logout@");
             out.flush();
         } catch (IOException e) {
             e.printStackTrace();

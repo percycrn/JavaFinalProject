@@ -1,6 +1,6 @@
 package com.client.cinterface.set;
 
-import com.client.cinterface.ClientStart;
+import com.client.ClientStart;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

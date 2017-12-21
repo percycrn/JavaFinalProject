@@ -1,7 +1,6 @@
 package com.server.sinterface;
 
 import com.server.ManageServer;
-import com.server.util.ConnDB;
 import com.server.util.ServerS;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +14,6 @@ import java.util.ResourceBundle;
 public class ServerController extends ManageServer implements Initializable {
     @FXML
     public TextField port;
-    public ListView listViewTop;
     public ListView listViewBottom;
 
     @FXML
@@ -33,14 +31,12 @@ public class ServerController extends ManageServer implements Initializable {
 
     @FXML
     protected void handleCloseAction() {
-        // TODO
         System.exit(0);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public void initialize(URL location, ResourceBundle resources) {
-        listViewTop.setItems(messageTop);
         listViewBottom.setItems(messageBottom);
     }
 }

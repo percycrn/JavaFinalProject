@@ -14,6 +14,12 @@
     <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="0">
         <Label text="Current Friend:"/>
         <Label fx:id="currentFriendName"/>
+        <!--<HBox>
+            <Button value="history"/>
+            <Button value="delete"/>
+            <Button value="fallback"/>
+            <Button value="exit"/>
+        </HBox>-->
     </HBox>
 
     <HBox spacing="10"
@@ -26,8 +32,7 @@
 
     <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="0">
         <TextField fx:id="deliveringMessage" prefHeight="50" prefWidth="400"/>
-        <Button text="send" onAction="#handleSendMessageAction" prefHeight="50" prefWidth="50"/>
-        <Button text="back" onAction="#handleBackToListAction" prefHeight="50" prefWidth="50"/>
+        <Button text="send" onAction="#handleSendMessageAction" prefHeight="50"/>
     </HBox>
 
 </GridPane>

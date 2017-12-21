@@ -1,26 +1,18 @@
 package com.client.cinterface.list;
 
 import com.client.ManageClient;
-import com.client.cinterface.ClientStart;
+import com.client.ClientStart;
 import com.client.cinterface.chat.Chat;
 import com.client.cinterface.login.Login;
-import com.server.util.ConnDB;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -42,7 +34,9 @@ public class ListController extends ManageClient implements Initializable {
             out.flush();
             out.writeUTF(friendName.getText());
             out.flush();
+            System.out.println(2);
             String addFriendStat = in.readUTF();
+            System.out.println(1);
             switch (addFriendStat) {
                 case "@SuccessToAddFriend@":
                     friendList.add(friendName.getText());
@@ -51,6 +45,7 @@ public class ListController extends ManageClient implements Initializable {
                     JOptionPane.showMessageDialog(null, "Friend client not exists");
                     break;
             }
+            System.out.println(3);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,6 +62,12 @@ public class ListController extends ManageClient implements Initializable {
         }
     }
 
+    @FXML
+    protected void handleExitAction() {
+        clientS.exit();
+        System.exit(0);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if (!friendListInitFlag) {
@@ -79,19 +80,18 @@ public class ListController extends ManageClient implements Initializable {
                 e.printStackTrace();
             }
             friendListInitFlag = true;
-            clientS.receiveMessage();
         }
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
                     targetName = friendListView.getSelectionModel().getSelectedItem().trim();
-                    Chat chat = new Chat();
+                    /*Chat chat = new Chat();
                     try {
                         chat.init();
                         chat.start(ClientStart.getStage());
                     } catch (Exception e) {
                         e.printStackTrace();
-                    }
+                    }*/
                 });
     }
 
