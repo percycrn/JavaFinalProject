@@ -18,7 +18,7 @@
         <Button text="fallback" onAction="#handleBackToLoginAction"/>
     </HBox>
 
-    <ListView fx:id="friendListView" style="-fx-background-insets: 0;" editable="true"
+    <ListView fx:id="friendListView" style="-fx-background-insets: 0;" editable="true" prefHeight="300"
               GridPane.rowIndex="1" >
     </ListView>
 

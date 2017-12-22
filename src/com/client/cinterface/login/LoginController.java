@@ -8,6 +8,7 @@ import com.client.util.ClientS;
 import com.server.util.ConnDB;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import jdk.nashorn.internal.scripts.JO;
 
@@ -25,7 +26,7 @@ public class LoginController extends ManageClient implements Initializable {
     @FXML
     public TextField clientNameLogin;
     @FXML
-    public TextField password;
+    public PasswordField password;
 
     @FXML
     protected void handleLoginAction() {
