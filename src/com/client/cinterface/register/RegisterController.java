@@ -1,10 +1,8 @@
 package com.client.cinterface.register;
 
 import com.client.ManageClient;
-import com.client.cinterface.ClientStart;
+import com.client.ClientStart;
 import com.client.cinterface.login.Login;
-import com.server.util.ConnDB;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
@@ -16,7 +14,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class RegisterController extends ManageClient implements Initializable {

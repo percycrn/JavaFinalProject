@@ -1,4 +1,4 @@
-package com.client.cinterface;
+package com.client;
 
 import com.client.cinterface.set.SetHostPort;
 import javafx.stage.Stage;

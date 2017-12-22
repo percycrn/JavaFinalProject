@@ -13,28 +13,23 @@ public class ServerS extends ManageServer {
     public ServerS(int port) {
         try {
             serverSocket = new ServerSocket(port);
-            messageTop.add("当前用户 " + map.size() + " 人");
             messageBottom.add(df.format(new Date()) + " success to start server in PC port " + PCPort);
+            messageBottom.add(df.format(new Date()) + " quantity of clients " + map.size());
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "PCPort已被占用");
         }
     }
 
-    @SuppressWarnings("unchecked")
-    private void listener() {
-        try {
-            Socket socket = serverSocket.accept();
-            new Thread(new ClientSS(socket)).start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @SuppressWarnings("InfiniteLoopStatement")
     public void startListener() {
         while (true) {
-            listener();
+            try {
+                Socket socket = serverSocket.accept();
+                new Thread(new ClientSS(socket)).start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }

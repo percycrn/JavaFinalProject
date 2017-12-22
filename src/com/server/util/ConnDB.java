@@ -65,6 +65,12 @@ public class ConnDB {
         statement.executeUpdate("INSERT INTO FRIEND VALUES ('" + friendName + "','" + clientName + "')");
     }
 
+    // delete friend
+    public void deleteFriend(String clientName, String friendName) throws SQLException {
+        statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + clientName + "' AND friendName = '" + friendName + "'");
+        statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + friendName + "' AND friendName = '" + clientName + "'");
+    }
+
     // close DB connection
     /*private void close(ResultSet resultSet, Statement statement, Connection connection) {
         if (resultSet != null) {

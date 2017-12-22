@@ -17,4 +17,8 @@ public class Server extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+
+    public static void launch() {
+        launch(new String[0]);
+    }
 }
