@@ -8,7 +8,6 @@ import java.util.Date;
 
 public class ServerS extends ManageServer {
     private static ServerSocket serverSocket;
-
     @SuppressWarnings("unchecked")
     public ServerS(int port) {
         try {

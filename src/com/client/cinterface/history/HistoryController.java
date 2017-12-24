@@ -43,6 +43,5 @@ public class HistoryController extends ManageClient implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

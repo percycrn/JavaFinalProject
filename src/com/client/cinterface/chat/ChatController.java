@@ -32,16 +32,12 @@ public class ChatController extends ManageClient implements Initializable {
         rightMessage.add(deliveringMessage.getText());
         leftMessage.add(" ");
         try {
-            try {
-                out.writeUTF("@SendMessage@");
-                out.flush();
-                out.writeUTF(ManageClient.targetName);
-                out.flush();
-                out.writeUTF(deliveringMessage.getText());
-                out.flush();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            out.writeUTF("@SendMessage@");
+            out.flush();
+            out.writeUTF(ManageClient.targetName);
+            out.flush();
+            out.writeUTF(deliveringMessage.getText());
+            out.flush();
             deliveringMessage.setText("");
         } catch (Exception e) {
             e.printStackTrace();

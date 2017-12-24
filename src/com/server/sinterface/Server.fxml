@@ -11,15 +11,12 @@
         <Insets top="25" bottom="10" right="25" left="25"/>
     </padding>
     <HBox GridPane.rowIndex="0">
-        <Label text="PCPort"/>
-        <Text text="  "/>
-        <TextField fx:id="port"/>
-        <Text text="  "/>
+        <Label text="PCPort"/><Text text="  "/>
+        <TextField fx:id="port"/><Text text="  "/>
         <Button text="Start Server" onAction="#handleServerStartAction"/>
         <Text text="  "/>
         <Button text="Close" onAction="#handleCloseAction"/>
     </HBox>
-
     <ListView fx:id="listViewBottom" style="-fx-background-insets: 0;" editable="true" prefHeight="350"
               GridPane.rowIndex="1"/>
 </GridPane>
