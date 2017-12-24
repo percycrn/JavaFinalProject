@@ -50,7 +50,7 @@ public class ConnDB {
 
     // store new client
     public void storeNewClient(String clientName, String password) throws SQLException {
-        statement.executeUpdate("INSERT INTO CLIENT(clientName,password) VALUES ('" + clientName + "','" + password + "')");
+        statement.executeUpdate("INSERT INTO CLIENT VALUES ('" + clientName + "','" + password + "',0)");
     }
 
     // initialize the list of friends
@@ -66,33 +66,56 @@ public class ConnDB {
     }
 
     // delete friend
-    public void deleteFriend(String clientName, String friendName) throws SQLException {
-        statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + clientName + "' AND friendName = '" + friendName + "'");
-        statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + friendName + "' AND friendName = '" + clientName + "'");
+    public boolean deleteFriend(String clientName, String friendName) {
+        try {
+            statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + clientName + "' AND friendName = '" + friendName + "'");
+            statement.executeUpdate("DELETE FROM FRIEND WHERE clientName = '" + friendName + "' AND friendName = '" + clientName + "'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
-    // close DB connection
-    /*private void close(ResultSet resultSet, Statement statement, Connection connection) {
-        if (resultSet != null) {
-            try {
-                resultSet.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    // get login status
+    public int getLoginStatus(String clientName) throws SQLException {
+        resultSet = statement.executeQuery("SELECT STATUS FROM CLIENT WHERE CLIENTNAME = '" + clientName + "'");
+        resultSet.next();
+        return Integer.valueOf(resultSet.getString("STATUS"));
+    }
+
+    // set login status
+    public void setLoginStatus(String clientName, int i) throws SQLException {
+        if (i == 0) {
+            statement.executeUpdate("UPDATE CLIENT SET STATUS = 0 WHERE CLIENTNAME = '" + clientName + "'");
+        } else if (i == 1) {
+            statement.executeUpdate("UPDATE CLIENT SET STATUS = 1 WHERE CLIENTNAME = '" + clientName + "'");
         }
-        if (statement != null) {
-            try {
-                statement.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    }
+
+    // init login status
+    public void setAllLogout() throws SQLException {
+        statement.executeUpdate("UPDATE CLIENT SET STATUS = 0");
+    }
+
+    // add History
+    public void addHistory(String clientName, String targetName, String message, String time) throws SQLException {
+        statement.executeUpdate("INSERT INTO HISTORY " +
+                "VALUES('" + clientName + "','" + targetName + "','" + message + "','" + time + "')");
+    }
+
+    // get History
+    public String getHistory(String clientName, String targetName) throws SQLException {
+        StringBuilder message = new StringBuilder();
+        resultSet = statement.executeQuery("SELECT * FROM HISTORY " +
+                "WHERE (CLIENTNAME = '" + clientName + "' and TARGETNAME = '" + targetName + "') " +
+                "OR (CLIENTNAME = '" + targetName + "' and TARGETNAME = '" + clientName + "') ");
+        while (resultSet.next()) {
+            message = message.append(resultSet.getString("TIME").trim())
+                    .append(" From [").append(resultSet.getString("CLIENTNAME").trim())
+                    .append("] to [").append(resultSet.getString("TARGETNAME").trim())
+                    .append("] ").append(resultSet.getString("MESSAGE").trim()).append("@!@");
         }
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
+        return String.valueOf(message);
+    }
 }

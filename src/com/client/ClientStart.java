@@ -1,6 +1,7 @@
 package com.client;
 
 import com.client.cinterface.set.SetHostPort;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 public class ClientStart {
@@ -17,4 +18,5 @@ public class ClientStart {
     public static void main(String[] args) {
         SetHostPort.launch();
     }
+
 }

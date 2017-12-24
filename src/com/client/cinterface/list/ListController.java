@@ -25,8 +25,12 @@ public class ListController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleAddFriendAction() {
+        if (friendName.getText().equals(clientName)) {
+            JOptionPane.showMessageDialog(null, "Cannot add yourself");
+            return;
+        }
         if (checkFriendExist(friendName.getText())) {
-            JOptionPane.showMessageDialog(null, "该用户已添加到列表中");
+            JOptionPane.showMessageDialog(null, "You have already add this friend");
             return;
         }
         try {
@@ -34,18 +38,15 @@ public class ListController extends ManageClient implements Initializable {
             out.flush();
             out.writeUTF(friendName.getText());
             out.flush();
-            System.out.println(2);
-            String addFriendStat = in.readUTF();
-            System.out.println(1);
-            switch (addFriendStat) {
+            String message = in.readUTF();
+            switch (message) {
                 case "@SuccessToAddFriend@":
-                    friendList.add(friendName.getText());
+                    friendList.add(in.readUTF());
                     break;
                 case "@FriendNotExist@":
                     JOptionPane.showMessageDialog(null, "Friend client not exists");
                     break;
             }
-            System.out.println(3);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,6 +54,12 @@ public class ListController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleBackToLoginAction() {
+        try {
+            out.writeUTF("@Logout@");
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Login login = new Login();
         try {
             login.init();
@@ -64,27 +71,31 @@ public class ListController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleExitAction() {
-        clientS.exit();
+        try {
+            out.writeUTF("@Logout@");
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.exit(0);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        friendList.removeAll();
         try {
+            friendList.remove(0, friendList.size());
             out.writeUTF("@InitFriendList@");
             out.flush();
-            String[] initFriendList = in.readUTF().split(",");
-            friendList.addAll(Arrays.asList(initFriendList));
+            friendList.addAll(Arrays.asList(in.readUTF().split(",")));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        friendListInitFlag = true;
         friendListView.setItems(friendList);
         friendListView.getSelectionModel().selectedItemProperty().
                 addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
                     targetName = friendListView.getSelectionModel().getSelectedItem().trim();
                     Chat chat = new Chat();
+                    whileList = true;
                     try {
                         chat.init();
                         chat.start(ClientStart.getStage());

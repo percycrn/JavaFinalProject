@@ -2,6 +2,7 @@ package com.client.cinterface.chat;
 
 import com.client.ManageClient;
 import com.client.ClientStart;
+import com.client.cinterface.history.History;
 import com.client.cinterface.list.List;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.control.TextField;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class ChatController extends ManageClient implements Initializable {
@@ -19,7 +21,6 @@ public class ChatController extends ManageClient implements Initializable {
     public ListView leftMessageView;
     public ListView rightMessageView;
     public Label currentFriendName;
-    private Thread thread;
 
     @FXML
     @SuppressWarnings("unchecked")
@@ -28,11 +29,20 @@ public class ChatController extends ManageClient implements Initializable {
             JOptionPane.showMessageDialog(null, "您的输入为空");
             return;
         }
-        rightMessage.add(deliveringMessage.getText()); // 在聊天左界面增加内容
+        rightMessage.add(deliveringMessage.getText());
         leftMessage.add(" ");
         try {
-            clientS.sendMessage(deliveringMessage.getText()); // 发送信息
-            deliveringMessage.setText(""); // 清空text框
+            try {
+                out.writeUTF("@SendMessage@");
+                out.flush();
+                out.writeUTF(ManageClient.targetName);
+                out.flush();
+                out.writeUTF(deliveringMessage.getText());
+                out.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            deliveringMessage.setText("");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "发送信息失败");
@@ -41,13 +51,12 @@ public class ChatController extends ManageClient implements Initializable {
 
     @FXML
     protected void handleBackToListAction() {
-        System.out.println(1);
         try {
-            stop();
-        } catch (InterruptedException e) {
+            out.writeUTF("@StopWhile@");
+            out.flush();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(2);
         List list = new List();
         try {
             list.init();
@@ -58,22 +67,16 @@ public class ChatController extends ManageClient implements Initializable {
     }
 
     @FXML
-    protected void handleHistoryAction() {
-
-    }
-
-    @FXML
     protected void handleDeleteAction() {
         int n = JOptionPane.showConfirmDialog(null,
                 "are you sure to delete this friend", "confirm", JOptionPane.YES_NO_OPTION);
+        System.out.println(n);
         if (n == 0) {
             try {
                 out.writeUTF("@DeleteFriend@");
                 out.flush();
                 out.writeUTF(targetName);
                 out.flush();
-                friendList.remove(targetName);
-                stop();
                 List list = new List();
                 list.init();
                 list.start(ClientStart.getStage());
@@ -84,17 +87,31 @@ public class ChatController extends ManageClient implements Initializable {
     }
 
     @FXML
+    protected void handleHistoryAction() {
+        try {
+            out.writeUTF("@StopWhile@");
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        History history = new History();
+        try {
+            history.init();
+            history.start(ClientStart.getStage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     protected void handleExitAction() {
-        clientS.exit();
+        try {
+            out.writeUTF("@Logout@");
+            out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.exit(0);
-    }
-
-    private synchronized void stop() throws InterruptedException {
-        thread.wait();
-    }
-
-    private synchronized void start() {
-        thread.notify();
     }
 
     @Override
@@ -103,12 +120,32 @@ public class ChatController extends ManageClient implements Initializable {
         leftMessageView.setItems(leftMessage);
         rightMessageView.setItems(rightMessage);
         currentFriendName.setText(targetName);
-        if (!threadFlag) {
-            thread = new Thread(() -> clientS.receiveMessage());
-            thread.start();
-            threadFlag = true;
-        } else {
-            start();
-        }
+        new Thread(() -> {
+            while (whileList) {
+                try {
+                    String message = in.readUTF();
+                    switch (message) {
+                        case "@SuccessToDeleteFriend@":
+                            whileList = false;
+                            break;
+                        case "@FailToDeleteFriend@":
+                            JOptionPane.showMessageDialog(null, "fail to delete this friend");
+                            break;
+                        case "@NewMessage@":
+                            String newMessage = in.readUTF();
+                            if (!newMessage.equals("")) {
+                                leftMessage.add(newMessage);
+                                rightMessage.add(" ");
+                            }
+                            break;
+                        case "@StopWhile@":
+                            whileList = false;
+                            break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }

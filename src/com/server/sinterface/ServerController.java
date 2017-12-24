@@ -11,21 +11,23 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ServerController extends ManageServer implements Initializable {
+public class ServerController extends ManageServer implements Initializable{
+
     @FXML
     public TextField port;
+    @FXML
     public ListView listViewBottom;
 
     @FXML
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("InfiniteLoopStatement")
     protected void handleServerStartAction() {
         if (port.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "请输入有效信息");
             return;
         }
-        PCPort = port.getText();
+        PCPort = Integer.valueOf(port.getText());
         port.setText("");
-        ServerS serverS = new ServerS(Integer.valueOf(PCPort));
+        ServerS serverS = new ServerS(PCPort);
         new Thread(serverS::startListener).start();
     }
 

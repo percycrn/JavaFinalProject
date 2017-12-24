@@ -1,0 +1,5 @@
+<root>
+    <item name='java.io.FilterOutputStream void close()'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

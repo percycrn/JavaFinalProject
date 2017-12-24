@@ -13,8 +13,8 @@ public class ServerS extends ManageServer {
     public ServerS(int port) {
         try {
             serverSocket = new ServerSocket(port);
-            messageBottom.add(df.format(new Date()) + " success to start server in PC port " + PCPort);
-            messageBottom.add(df.format(new Date()) + " quantity of clients " + map.size());
+            messageBottom.add(df.format(new Date()) + " start server in PCPort " + PCPort);
+            messageBottom.add(df.format(new Date()) + " current clients " + map.size());
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "PCPort已被占用");
